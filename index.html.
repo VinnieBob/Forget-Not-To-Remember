@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Forget Not to Remember — The Children’s Codex</title>
+  <meta name="description" content="A symbol-first children's codex that invites sovereignty, intuition, and remembrance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b0e13;
+      --panel:#121620;
+      --ink:#e8ebf1;
+      --mute:#b9c2d0;
+      --gold:#dfc77e;
+      --focus:#89c2ff;
+      --max:1120px;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 700px at 50% -10%, rgba(223,199,126,.15), transparent 70%),
+                  radial-gradient(900px 600px at 80% 10%, rgba(137,194,255,.08), transparent 70%),
+                  var(--bg);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:var(--ink); text-decoration:none}
+    .wrap{max-width:var(--max); margin-inline:auto; padding:24px}
+    header{position:sticky; top:0; backdrop-filter: blur(8px); background:rgba(11,14,19,.55); z-index:10; border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:36px; height:36px; border-radius:50%;
+      background: conic-gradient(from 0deg, #f6e7a0, #bfa55a, #8a6, #89c2ff, #f6e7a0);
+      box-shadow:0 0 0 2px rgba(255,255,255,.08) inset, 0 8px 24px rgba(223,199,126,.25);
+    }
+    .brand h1{font-size:18px; margin:0; font-weight:600; letter-spacing:.3px}
+    .cta{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border:1px solid rgba(255,255,255,.14); border-radius:999px; transition:.2s; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02))}
+    .cta:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.25)}
+    .hero{padding:56px 0 24px}
+    .grid{display:grid; grid-template-columns:1.1fr .9fr; gap:36px}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr; gap:24px} }
+    .panel{background:rgba(18,22,32,.7); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .p24{padding:24px}
+    .tag{display:inline-block; font-size:12px; color:var(--mute); letter-spacing:.18em; text-transform:uppercase; border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px}
+    .hxl{font-size: clamp(28px, 4vw, 44px); margin:.6em 0 .2em; line-height:1.15}
+    .lede{font-size: clamp(16px, 2.4vw, 20px); color:var(--mute)}
+    .gold{color:var(--gold)}
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    button, .button{
+      cursor:pointer; border-radius:12px; border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(180deg, rgba(223,199,126,.25), rgba(223,199,126,.12));
+      color:var(--ink); padding:12px 16px; font-weight:600; letter-spacing:.2px; transition:.2s
+    }
+    button:hover, .button:hover{transform:translateY(-1px); border-color:rgba(223,199,126,.45)}
+    .ghost{background:transparent}
+    .card{display:flex; gap:14px; padding:16px; border:1px solid rgba(255,255,255,.08); border-radius:14px}
+    .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); margin-top:6px}
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media (max-width:900px){ .features{grid-template-columns:1fr} }
+    .sample{
+      aspect-ratio: 4/3; border-radius:14px; border:1px solid rgba(255,255,255,.08); position:relative; overflow:hidden;
+      background: radial-gradient(500px 300px at 70% 0%, rgba(223,199,126,.12), transparent 70%), linear-gradient(135deg, #0f1420, #0b0e13)
+    }
+    .sample .spiral{
+      position:absolute; inset:-20% -30% auto auto; width:140%; height:140%;
+      background:
+        radial-gradient(closest-side, rgba(223,199,126,.14), transparent 60%) 50% 50% / 60% 60% no-repeat;
+      mask: radial-gradient(circle at 50% 50%, black 35%, transparent 38%);
+      opacity:.8;
+    }
+    .quote{
+      margin:6px 0 0; font-size:14px; color:var(--mute)
+    }
+    .section{padding:40px 0}
+    .invite{
+      font-size:18px; background:rgba(18,22,32,.6); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px
+    }
+    .field{display:flex; gap:10px; flex-wrap:wrap}
+    input[type="email"]{
+      flex:1 1 260px; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.16);
+      background:#0f1420; color:var(--ink)
+    }
+    input::placeholder{color:#8e99ad}
+    footer{padding:28px 0; color:var(--mute); font-size:14px}
+    .sr{position:absolute; left:-9999px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Forget Not to Remember</h1>
+      </div>
+      <a class="cta" href="#join" aria-label="Jump to updates signup">Get updates</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="grid">
+        <div class="panel p24">
+          <span class="tag">Children’s Codex</span>
+          <h2 class="hxl">A symbol‑first book that invites <span class="gold">sovereignty</span>, intuition, and remembrance.</h2>
+          <p class="lede">
+            Minimal words. Pure geometry. A gentle field that lets every child choose their own way of seeing.
+          </p>
+          <div class="actions">
+            <a class="button" href="#samples">See samples</a>
+            <a class="button ghost" href="#join">Be first to know</a>
+          </div>
+        </div>
+        <div class="panel p24" id="samples" aria-labelledby="samples-heading">
+          <h3 id="samples-heading" style="margin:0 0 8px 0">Sample spreads</h3>
+          <div class="sample" role="img" aria-label="Opening Gate — a luminous seed with soft golden ripples">
+            <div class="spiral" aria-hidden="true"></div>
+          </div>
+          <div class="quote">Word on page: <em>Begin.</em></div>
+          <div style="height:12px"></div>
+          <div class="sample" role="img" aria-label="Mirror of the Self — two beings linked by a golden thread">
+            <div class="spiral" aria-hidden="true"></div>
+          </div>
+          <div class="quote">Invitation page text: <em>The choice is yours. Feel free to trust your imagination.</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="features">
+        <div class="card">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <strong>Symbolic design</strong>
+            <div class="quote">Golden‑ratio spirals, fractal symmetry, gentle light‑geometry.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <strong>Minimal words</strong>
+            <div class="quote">Carefully selected phrases that open, not command.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <strong>Interactive pages</strong>
+            <div class="quote">Space to add, to leave blank, or to imagine. All valid.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="panel p24">
+        <h3 style="margin-top:0">What the codex transmits</h3>
+        <div class="grid" style="gap:18px">
+          <div class="invite">
+            <strong>Coherence</strong><br />
+            A calm, steady field that helps children feel safe in their own perception.
+          </div>
+          <div class="invite">
+            <strong>Sovereignty</strong><br />
+            “The choice is yours.” No hierarchy of outcomes. Space to be.
+          </div>
+          <div class="invite">
+            <strong>Remembrance</strong><br />
+            Quiet prompts that reconnect inner knowing with gentle, living geometry.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="wrap section">
+      <div class="panel p24">
+        <h3 style="margin-top:0">Be first to receive the release</h3>
+        <p class="quote">Enter your email to receive the launch, printable sample pages, and the educator/parent guide.</p>
+        <form id="signup" class="field" aria-label="Email signup">
+          <label class="sr" for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required inputmode="email" />
+          <button type="submit" aria-label="Join the list">Notify me</button>
+          <div id="msg" role="status" aria-live="polite" style="font-size:14px; color:var(--mute)"></div>
+        </form>
+        <p class="quote" style="margin-top:10px">No spam. One-click unsubscribe.</p>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="panel p24">
+        <h3 style="margin-top:0">For parents, educators, and caregivers</h3>
+        <p class="quote">
+          This work is not a story to memorize. It is a field to enter. Read slowly. Let the pages breathe.
+          Offer the invitation: <em>The choice is yours. Feel free to trust your imagination.</em>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>&copy; <span id="year"></span> Forget Not to Remember</div>
+      <div class="quote">Designed with coherence. Printed with care.</div>
+    </div>
+  </footer>
+
+  <script>
+    // lightweight, no-backend email capture using mailto fallback.
+    // Swap 'mailto:' for your provider (Formspree / ConvertKit / Beehiiv) if desired.
+    const form = document.querySelector('#signup');
+    const email = document.querySelector('#email');
+    const msg = document.querySelector('#msg');
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if(!email.checkValidity()){
+        msg.textContent = 'Please enter a valid email.';
+        email.focus();
+        return;
+      }
+      const address = encodeURIComponent(email.value.trim());
+      msg.textContent = 'Opening your email app…';
+      const subject = encodeURIComponent('Notify me: Forget Not to Remember');
+      const body = encodeURIComponent('Please add me to the release list for the Children’s Codex.');
+      window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}%0D%0A%0D%0AFrom:%20${address}`;
+      setTimeout(()=>{ msg.textContent = 'If your email app didn’t open, contact: dustinorder@gmail.com'; }, 800);
+    }, {passive:false});
+  </script>
+</body>
+</html>
